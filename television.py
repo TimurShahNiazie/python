@@ -3,6 +3,7 @@ class Television:
     MAX_VOLUME = 2
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
+    #
 
     def __init__(self):
         self.__status = False
