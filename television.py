@@ -20,7 +20,9 @@ class Television:
             self.__status = False
 
     def mute(self):
-        if self.__muted == False:
+        if self.__status == False:
+            pass
+        elif self.__muted == False:
             self.__muted = True
         elif self.__muted == True:
             self.__muted = False
@@ -69,5 +71,8 @@ class Television:
             self.__volume -= 1
 
     def __str__(self):
-        return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume},'
+        if self.__muted == True:
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.MIN_VOLUME},'
+        else:
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume},'
 
