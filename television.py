@@ -7,8 +7,8 @@ class Television:
     def __init__(self) -> None:
         self.__status: bool = False
         self.__muted: bool =  False
-        self.__volume: int = self.MIN_VOLUME
-        self.__channel: int = self.MIN_CHANNEL
+        self.__volume: int = Television.MIN_VOLUME
+        self.__channel: int = Television.MIN_CHANNEL
         """
         Declares all the instance variables 
         status = declares the power of the tv
@@ -54,8 +54,7 @@ class Television:
         """
         When the TV is on, it increases the channel and 
         when it goes over the max it is set back to the min
-        :param status is checked for true or false
-        :param channel is set to min if at max or is added by 1
+        
         """
     def channel_down(self) -> None:
         if self.__status == False:
@@ -67,8 +66,7 @@ class Television:
         """
         When the TV is on, it decreases the channel and 
         when it goes under the min it is set back to the max
-        :param status is checked for true or false
-        :param channel is set to max if at min or subtracted by one
+        
         """
 
 
@@ -88,10 +86,7 @@ class Television:
         """
         When the TV is on, the TV becomes unmuted and the volume 
         increases by one
-        :param status checks true or false
-        :param muted unmutes the tv if it is muted
-        :param volume checks if it is at max volume and keeps it there
-        and also adds 1 to the volume
+        
         """
 
     def volume_down(self) -> None:
@@ -109,20 +104,19 @@ class Television:
             self.__volume -= 1
     """
     When the TV is on, the volume is decreased by 1 and the tv is unmuted
-    :param status checks true or false
-    :param muted unmutes the tv
-    :param volume decreases by 1 or keeps it at the min volume
+    
     """
 
     def __str__(self) -> str:
         if self.__muted == True:
-            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.MIN_VOLUME},'
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.MIN_VOLUME}'
         else:
-            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume},'
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
 
     """
     Returns the power, channel, and volume every iteration 
-    :return status, channel, volume 
+    :return power = self.__status, Channel = self.__channel, Volume = self.__volume 
+    
     """
 
 
